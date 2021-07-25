@@ -7,4 +7,18 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="background_day">#FFDCE4EA</color>
+    <color name="background_night">#FF1A1A1A</color>
+    <color name="secondary_text_color_day">#FFA8A7C5</color>
+    <color name="objects_background_night">#FF3E3E3E</color>
+    <color name="objects_background_day">#FFF4F4F4</color>
+
+    <color name="app_basic_light_green_color">#FFB1DCAD</color>
+    <color name="app_basic_beige_color">#FFE5A49B</color>
+    <color name="app_basic_light_blue_color">#FFA8A7C5</color>
+
+
 </resources>

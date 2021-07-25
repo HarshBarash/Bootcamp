@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_code_24"
+        android:title="Settings"/>
+    <item
+        android:id="@+id/places"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_code_24"
+        android:title="Places"/>
+    <item
+        android:id="@+id/ar"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_code_24"
+        android:title="AR"/>
+    <item
+        android:id="@+id/sorting"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_code_24"
+        android:title="Sorting"/>
+
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_code_24"
+        android:title="Home"/>
+</menu>
