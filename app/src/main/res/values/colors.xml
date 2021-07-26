@@ -20,5 +20,7 @@
     <color name="app_basic_beige_color">#FFE5A49B</color>
     <color name="app_basic_light_blue_color">#FFA8A7C5</color>
 
+    <color name="splash_background">#FFB1DCAD</color>
+    <color name="splash_toolbar_background">#FFB1DCAD</color>
 
 </resources>

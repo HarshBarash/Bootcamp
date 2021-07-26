@@ -24,4 +24,12 @@
         <item name="android:minHeight">48dp</item>
     </style>
 
+    <style name="AppSplashTheme" parent="Theme.Bootcamp">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:colorPrimary">@color/splash_background</item>
+        <item name="colorPrimary">@color/splash_background</item>
+        <item name="android:colorPrimaryDark">@color/splash_toolbar_background</item>
+        <item name="colorPrimaryDark">@color/splash_toolbar_background</item>
+    </style>
+
 </resources>

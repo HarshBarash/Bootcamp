@@ -49,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
+            app:cornerRadius="24dp"
             app:icon="@drawable/ic_baseline_code_24"
             app:strokeWidth="0dp" />
 
@@ -58,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
+            app:cornerRadius="24dp"
             app:icon="@drawable/ic_baseline_code_24"
             app:strokeWidth="0dp" />
     </LinearLayout>
