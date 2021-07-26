@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.EditText
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -43,7 +45,7 @@ class SettingsFragment : Fragment(), View.OnClickListener {
                               savedInstanceState: Bundle?): View? {
         Log.v(LOG_SETTINGS_FRAGMENT, "onCreateView called")
 
-        val rootView            = inflater.inflate(R.layout.fragment_home, container, false)
+        val rootView            = inflater.inflate(R.layout.fragment_settings, container, false)
 
         //Навигация дальше
 //        view.findViewById<Button>(R.id.signup_btn).setOnClickListener {
@@ -65,7 +67,7 @@ class SettingsFragment : Fragment(), View.OnClickListener {
         val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
         (tfLanguage.editText as? AutoCompleteTextView)?.setAdapter(adapter)
 
-        return view
+        return rootView
     }
 
     override fun onDestroyView() {
@@ -79,7 +81,6 @@ class SettingsFragment : Fragment(), View.OnClickListener {
             R.id.vBasicColorLightGreen  -> {}
             R.id.vBasicColorLightBlue   -> {}
             R.id.vBasicColorBeige       -> {}
-            R.id.topAppBar              -> {}
         }
     }
 
@@ -87,7 +88,9 @@ class SettingsFragment : Fragment(), View.OnClickListener {
         vBasicColorLightGreen.setOnClickListener(this)
         vBasicColorLightBlue.setOnClickListener (this)
         vBasicColorBeige.setOnClickListener     (this)
-        topAppBar.setNavigationOnClickListener  (this)
         clOtherColors.setOnClickListener        (this)
+        topAppBar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 }

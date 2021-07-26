@@ -36,6 +36,17 @@
 
     </com.google.android.material.navigationrail.NavigationRailView>
 
+    <com.google.android.material.navigationrail.NavigationRailView
+        android:id="@+id/navigation_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:background="@drawable/right_corners_shape"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_container"
+        app:menu="@menu/search_rail_menu"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,17 +74,6 @@
             app:icon="@drawable/ic_baseline_code_24"
             app:strokeWidth="0dp" />
     </LinearLayout>
-
-    <com.google.android.material.navigationrail.NavigationRailView
-        android:id="@+id/navigation_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        android:background="@drawable/right_corners_shape"
-        app:layout_constraintTop_toTopOf="@+id/nav_host_container"
-        app:menu="@menu/search_rail_menu"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

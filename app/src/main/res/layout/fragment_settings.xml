@@ -149,10 +149,8 @@
                     android:backgroundTint="@color/app_basic_light_green_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/vBasicColorBeige"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.4">
+                    app:layout_constraintTop_toTopOf="parent">
 
                 </View>
 
@@ -164,10 +162,8 @@
                     android:backgroundTint="@color/app_basic_beige_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/vBasicColorLightBlue"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/vBasicColorLightGreen"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.6" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/vBasicColorLightBlue"
@@ -177,7 +173,6 @@
                     android:backgroundTint="@color/app_basic_light_blue_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/clOtherColors"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/vBasicColorBeige"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -187,7 +182,6 @@
                     android:layout_height="54dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/vBasicColorLightBlue"
                     app:layout_constraintTop_toTopOf="parent">
 

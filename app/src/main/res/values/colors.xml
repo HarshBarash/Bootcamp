@@ -16,11 +16,11 @@
     <color name="objects_background_night">#FF3E3E3E</color>
     <color name="objects_background_day">#FFF4F4F4</color>
 
-    <color name="app_basic_light_green_color">#FFB1DCAD</color>
+    <color name="app_basic_light_green_color">#FF9ADF94</color>
     <color name="app_basic_beige_color">#FFE5A49B</color>
-    <color name="app_basic_light_blue_color">#FFA8A7C5</color>
+    <color name="app_basic_light_blue_color">#FF9DD0F4</color>
 
-    <color name="splash_background">#FFB1DCAD</color>
-    <color name="splash_toolbar_background">#FFB1DCAD</color>
+    <color name="splash_background">#FF9DD0F4</color>
+    <color name="splash_toolbar_background">#FF9DD0F4</color>
 
 </resources>
