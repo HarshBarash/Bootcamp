@@ -1,17 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/arFragment"
         android:name="github.bootcamp.arscreen.ArFragment"
-        android:label="ArFragment" />
+        android:label="ArFragment"
+        tools:layout="@layout/fragment_ar">
+        <action
+            android:id="@+id/action_arFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="github.bootcamp.startscreen.RegisterFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signUpFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="github.bootcamp.startscreen.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="github.bootcamp.homescreen.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_arFragment"
             app:destination="@id/arFragment" />
@@ -28,11 +59,17 @@
     <fragment
         android:id="@+id/placesFragment"
         android:name="github.bootcamp.placesscreen.PlacesFragment"
-        android:label="PlacesFragment" />
+        android:label="PlacesFragment"
+        tools:layout="@layout/fragment_places">
+        <action
+            android:id="@+id/action_placesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="github.bootcamp.settingsscreen.SettingsFragment"
-        android:label="SettingsFragment" >
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settingsFragment_to_homeFragment2"
             app:destination="@id/homeFragment" />
@@ -40,6 +77,11 @@
     <fragment
         android:id="@+id/sortingFragment"
         android:name="github.bootcamp.sortingscreen.SortingFragment"
-        android:label="SortingFragment" />
+        android:label="SortingFragment"
+        tools:layout="@layout/fragment_sorting">
+        <action
+            android:id="@+id/action_sortingFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
 </navigation>
