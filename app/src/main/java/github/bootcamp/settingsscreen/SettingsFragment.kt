@@ -7,17 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import android.widget.EditText
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import github.bootcamp.MainActivity
 import github.bootcamp.R
+import github.bootcamp.utils.ENABLE
 import github.bootcamp.utils.LOG_SETTINGS_FRAGMENT
-import org.intellij.lang.annotations.Language
 
 class SettingsFragment : Fragment(), View.OnClickListener {
 
@@ -91,6 +90,7 @@ class SettingsFragment : Fragment(), View.OnClickListener {
         clOtherColors.setOnClickListener        (this)
         topAppBar.setNavigationOnClickListener {
             findNavController().popBackStack()
+            (activity as MainActivity?)?.railController(ENABLE)
         }
     }
 }

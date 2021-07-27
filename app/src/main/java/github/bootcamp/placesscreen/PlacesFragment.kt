@@ -13,12 +13,12 @@ class PlacesFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_places, container, false)
 
         //Навигация дальше
 //        view.findViewById<Button>(R.id.signup_btn).setOnClickListener {
 //            findNavController().navigate(R.id.action_register_to_registered)
 //        }
-        return view
+        return rootView
     }
 }

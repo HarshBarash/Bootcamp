@@ -1,5 +1,6 @@
 package github.bootcamp
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var searchRailView     : NavigationRailView
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        //themeSetter
+        themeController() //Эта херь определяет тему и ставит тему пользователя
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.v(LOG_MAIN_ACTIVITY, "onCreate called")
@@ -109,7 +110,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun railController(action: String) {
+    fun railController(action: String) {
         when (action) {
             DISABLE -> {
                 navigationRailView.visibility   = View.GONE
@@ -119,6 +120,18 @@ class MainActivity : AppCompatActivity() {
             ENABLE -> {
                 navigationRailView.visibility   = View.VISIBLE
                 searchRailView.visibility       = View.VISIBLE
+            }
+        }
+    }
+
+    fun themeController() {
+        //В процессе разработки
+        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+            Configuration.UI_MODE_NIGHT_YES -> {
+
+            }
+            Configuration.UI_MODE_NIGHT_NO -> {
+
             }
         }
     }
