@@ -5,12 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.navigation.NavigationView
 import com.google.android.material.navigationrail.NavigationRailView
 import github.bootcamp.utils.DISABLE
 import github.bootcamp.utils.ENABLE
@@ -53,8 +49,9 @@ class MainActivity : AppCompatActivity() {
 
                     true
                 }
-                R.id.ar -> {
-
+                R.id.stats -> {
+                    navController.navigate(R.id.action_homeFragment_to_statsFragment, null)
+                    railController(DISABLE)
                     true
                 }
                 R.id.sorting -> {

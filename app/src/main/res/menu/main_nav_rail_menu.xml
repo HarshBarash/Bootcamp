@@ -4,27 +4,27 @@
     <item
         android:id="@+id/settings"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_code_24"
+        android:icon="@drawable/ic_settings"
         android:title="Settings"/>
     <item
         android:id="@+id/places"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_code_24"
+        android:icon="@drawable/ic_places"
         android:title="Places"/>
     <item
-        android:id="@+id/ar"
+        android:id="@+id/stats"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_code_24"
-        android:title="AR"/>
+        android:icon="@drawable/ic_stats"
+        android:title="Stats"/>
     <item
         android:id="@+id/sorting"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_code_24"
+        android:icon="@drawable/ic_sort"
         android:title="Sorting"/>
 
     <item
         android:id="@+id/home"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_code_24"
+        android:icon="@drawable/ic_home"
         android:title="Home"/>
 </menu>

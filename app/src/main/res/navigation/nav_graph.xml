@@ -6,12 +6,12 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/arFragment"
-        android:name="github.bootcamp.arscreen.ArFragment"
-        android:label="ArFragment"
-        tools:layout="@layout/fragment_ar">
+        android:id="@+id/statsFragment"
+        android:name="github.bootcamp.arscreen.StatsFragment"
+        android:label="StatsFragment"
+        tools:layout="@layout/fragment_stats">
         <action
-            android:id="@+id/action_arFragment_to_homeFragment"
+            android:id="@+id/action_statsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 
@@ -44,8 +44,8 @@
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_arFragment"
-            app:destination="@id/arFragment" />
+            android:id="@+id/action_homeFragment_to_statsFragment"
+            app:destination="@id/statsFragment" />
         <action
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
