@@ -9,9 +9,14 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="transparent">#00000000</color>
+
     <color name="background_color">#DCE4EA</color>
     <color name="color_icons">#9DD0F4</color>
-    <color name="background_day">#D4E3FB</color>
+
+    <color name="background_day_blue">#D4E3FB</color>
+    <color name="background_day_green">#CFECCD</color>
+    <color name="background_day_beige">#F3CFCA</color>
+
     <color name="background_night">#FF1A1A1A</color>
     <color name="secondary_text_color_day">#FFA8A7C5</color>
     <color name="objects_background_night">#FF3E3E3E</color>

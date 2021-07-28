@@ -3,7 +3,9 @@
 
     <string name="title_home">Home</string>
     <string name="title_sorting">Sorting</string>
-    <string name="title_ar">AR</string>
+    <string name="title_ar" translatable="false">AR</string>
     <string name="title_places">Places</string>
     <string name="title_settings">Settings</string>
+    <string name="title_stats">Statistics</string>
+
 </resources>

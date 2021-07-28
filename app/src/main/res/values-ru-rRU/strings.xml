@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bootcamp</string>
+    <string name="title_home">Главная</string>
+    <string name="title_sorting">Сортировка</string>
+    <string name="title_places">Места</string>
+    <string name="title_settings">Настройки</string>
+    <string name="title_stats">Статистика</string>
+</resources>

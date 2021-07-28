@@ -48,33 +48,5 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:id="@+id/btnAdd"
-            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            app:cornerRadius="24dp"
-            app:icon="@drawable/ic_baseline_code_24"
-            app:strokeWidth="0dp" />
-
-        <Button
-            android:id="@+id/btnFilter"
-            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            app:cornerRadius="24dp"
-            app:icon="@drawable/ic_baseline_code_24"
-            app:strokeWidth="0dp" />
-    </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

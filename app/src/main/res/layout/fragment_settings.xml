@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background_day"
+    android:background="?attr/colorPrimaryVariant"
     tools:context=".SettingsFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:elevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,11 +21,12 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/background_day"
+            android:background="?attr/colorPrimaryVariant"
             app:navigationIconTint="@color/black"
             app:titleTextColor="@color/black"
             app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_new_24"
-            app:title="Settings" />
+            app:titleCentered="true"
+            app:title="@string/title_settings" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -50,15 +52,16 @@
             android:id="@+id/tfName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="User"
             app:boxStrokeWidth="0dp"
+            android:src="@drawable/rect"
             app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
-                android:background="@color/objects_background_day"
+                android:background="@drawable/rect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPersonName"
                 android:textSize="24sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -78,14 +81,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxStrokeWidth="0dp"
-            android:hint="User"
+            android:src="@drawable/rect"
             app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/objects_background_day"
+                android:inputType="textPersonName"
+                android:background="@drawable/rect"
                 android:textSize="24sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -100,25 +104,12 @@
             android:textSize="18sp"
             android:text="Language" />
 
-        <com.google.android.material.textfield.TextInputLayout
 
-            android:id="@+id/tfLanguage"
+        <Spinner
+            android:id="@+id/spinLanguages"
+            android:background="@color/objects_background_day"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:boxStrokeWidth="0dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
-
-            <AutoCompleteTextView
-                android:id="@+id/autoTVLanguage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint=""
-                android:backgroundTint="@color/objects_background_day"
-                android:textSize="24sp"
-                android:inputType="none"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvAppColor"
@@ -134,12 +125,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:background="@color/objects_background_day"
+            android:background="@drawable/rect"
             android:orientation="horizontal">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/vOtherSelectedByUserTheme"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/app_color_shape"
+                    android:backgroundTint="@color/app_basic_light_green_color"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/vBasicColorLightBlue"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </View>
+
+                <View
+                    android:id="@+id/vBasicColorLightBlue"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/app_color_shape"
+                    android:backgroundTint="@color/app_basic_light_blue_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/vBasicColorLightGreen"
+                    app:layout_constraintStart_toEndOf="@+id/vOtherSelectedByUserTheme"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/vBasicColorLightGreen"
@@ -149,7 +165,7 @@
                     android:backgroundTint="@color/app_basic_light_green_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/vBasicColorBeige"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/vBasicColorLightBlue"
                     app:layout_constraintTop_toTopOf="parent">
 
                 </View>
@@ -161,19 +177,8 @@
                     android:background="@drawable/app_color_shape"
                     android:backgroundTint="@color/app_basic_beige_color"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/vBasicColorLightBlue"
-                    app:layout_constraintStart_toEndOf="@+id/vBasicColorLightGreen"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:id="@+id/vBasicColorLightBlue"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/app_color_shape"
-                    android:backgroundTint="@color/app_basic_light_blue_color"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/clOtherColors"
-                    app:layout_constraintStart_toEndOf="@+id/vBasicColorBeige"
+                    app:layout_constraintStart_toEndOf="@+id/vBasicColorLightGreen"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -182,7 +187,7 @@
                     android:layout_height="54dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/vBasicColorLightBlue"
+                    app:layout_constraintStart_toEndOf="@+id/vBasicColorBeige"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <View
@@ -193,7 +198,6 @@
                         android:background="@drawable/app_color_shape"
                         app:layout_constraintBottom_toTopOf="@+id/vClrs7"
                         app:layout_constraintEnd_toStartOf="@+id/vClrs4"
-                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/vClrs6" />
 
@@ -215,7 +219,6 @@
                         android:background="@drawable/app_color_shape"
                         app:layout_constraintBottom_toTopOf="@+id/vClrs2"
                         app:layout_constraintEnd_toStartOf="@+id/vClrs5"
-                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/vClrs7" />
 
@@ -227,7 +230,6 @@
                         android:background="@drawable/app_color_shape"
                         app:layout_constraintBottom_toTopOf="@+id/vClrs7"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/vClrs1"
                         app:layout_constraintTop_toBottomOf="@+id/vClrs6" />
 
@@ -239,7 +241,6 @@
                         android:background="@drawable/app_color_shape"
                         app:layout_constraintBottom_toTopOf="@+id/vClrs2"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/vClrs3"
                         app:layout_constraintTop_toBottomOf="@+id/vClrs7" />
 
@@ -282,7 +283,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/objects_background_day"
+            android:background="@drawable/rect"
             android:orientation="horizontal">
 
             <ImageView
@@ -314,5 +315,16 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fltSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_save_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

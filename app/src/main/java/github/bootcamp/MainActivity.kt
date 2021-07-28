@@ -1,16 +1,16 @@
 package github.bootcamp
 
+import android.content.Context
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.google.android.material.navigationrail.NavigationRailView
-import github.bootcamp.utils.DISABLE
-import github.bootcamp.utils.ENABLE
-import github.bootcamp.utils.LOG_MAIN_ACTIVITY
+import github.bootcamp.utils.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,8 +19,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var searchRailView     : NavigationRailView
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        themeController() //Эта херь определяет тему и ставит тему пользователя
+        themeController() //Эта херь определяет и ставит тему пользователя
         super.onCreate(savedInstanceState)
+        setLanguage() // Эта херь ставит язык
         setContentView(R.layout.activity_main)
         Log.v(LOG_MAIN_ACTIVITY, "onCreate called")
 
@@ -121,8 +122,56 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun themeController() {
+    private fun setLanguage() {
+        val sp = getSharedPreferences(SETTINGS_FILE, 0)
+        val defLang = Locale.getDefault().displayLanguage
+
+        var language: String = sp.getString(SETTINGS_LANGUAGE, null) ?: return
+
+        Log.v(LOG_MAIN_ACTIVITY, "SharedPrefs lang: $language")
+
+        if (defLang == language)
+            return
+        else if (language == RUSSIAN)
+            language = "ru"
+        else if (language == ENGLISH)
+            language = "en"
+        else if (language == GERMAN)
+            language = "de"
+
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+        // Create a new configuration object
+        val config = Configuration()
+        // Set the locale of the new configuration
+        config.locale = locale
+        // Update the configuration of the Accplication context
+        resources.updateConfiguration(
+            config,
+            resources.displayMetrics
+        )
+    }
+
+    private fun themeController() {
         //В процессе разработки
+        val spConfig = getSharedPreferences(SETTINGS_FILE, Context.MODE_PRIVATE)
+        val theme = spConfig.getString(SETTINGS_THEME, LIGHT_BLUE_THEME)
+
+        Log.v(LOG_MAIN_ACTIVITY, "Theme: $theme")
+
+
+        if (theme == LIGHT_GREEN_THEME)
+            setTheme(R.style.AppLightGreenTheme)
+
+        if (theme == LIGHT_BLUE_THEME)
+            setTheme(R.style.AppLightBlueTheme)
+
+        if (theme == BEIGE_THEME)
+            setTheme(R.style.AppBeigeTheme)
+
+        //val language = spConfig.getString(SETTINGS_THEME, Locale.getDefault().displayLanguage.toString())
+
+
         when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
             Configuration.UI_MODE_NIGHT_YES -> {
 
@@ -132,4 +181,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Log.v(LOG_MAIN_ACTIVITY, "onBackPressed called")
+        TODO("Переопределить эту херь для фрагментов")
+    }
+
+
 }

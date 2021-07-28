@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color"
+    android:background="?attr/colorPrimaryVariant"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayoutStats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:elevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,11 +20,12 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/background_day"
+            android:background="?attr/colorPrimaryVariant"
             app:navigationIconTint="@color/black"
             app:titleTextColor="@color/black"
             app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_new_24"
-            app:title="Статистика" />
+            app:title="@string/title_stats"
+            app:titleCentered="true"/>
     </com.google.android.material.appbar.AppBarLayout>
 
 
